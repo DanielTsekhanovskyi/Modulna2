@@ -5,3 +5,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def __iter__(self):
+        for recipe in self.recipe_set.all():
+            yield recipe
